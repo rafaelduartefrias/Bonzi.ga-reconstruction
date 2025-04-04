@@ -131,7 +131,7 @@ let userCommands = {
   if (this.private.runlevel >= 1) {
     this.private.runlevel = 1;
   }
-}
+},
     "sanitize": function() {
         let sanitizeTerms = ["false", "off", "disable", "disabled", "f", "no", "n"];
         let argsString = Utils.argsString(arguments);

@@ -25,9 +25,9 @@
 				"unvaporwave": 0,
 				"name": 0,
 				"pope": 1,
-				"kick": 2,
+				"kick": 2
 			},
-			"room_max": 15,
+			"room_max": 128,
 			"owner": null,
 			"pitch": {
 				"max": 125,

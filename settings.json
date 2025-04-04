@@ -4,6 +4,8 @@
 			"char_limit": 2500,
 			"name_limit": 25,
 			"godword": "test1234567890",
+			"adminword": "test1234567890",
+			"modword": "test1234567890",
 			"runlevel": {
 				"godmode": 0,
 				"youtube": 0,
@@ -42,7 +44,7 @@
 		"private": {
 			"char_limit": 5000,
 			"name_limit": 25,
-			"godword": null,
+			"modword": null,
 			"runlevel": {
 				"godmode": 0,
 				"youtube": 0,

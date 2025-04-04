@@ -279,7 +279,7 @@ let userCommands = {
     to: targetUser.guid,
     message: sanitizedMessage
   });
- }
+ },
 };
 
 

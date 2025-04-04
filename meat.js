@@ -122,15 +122,21 @@ let userCommands = {
             success: success
         });
     },
-    "adminmode": function() {
-  if (this.private.runlevel >= 2) {
-    this.private.runlevel = 2;
-  }
+"adminmode": function() {
+  let success = word == this.room.prefs.adminword;
+        if (success) this.private.runlevel = 2;
+        log.info.log('debug', 'adminmode', {
+            guid: this.guid,
+            success: success
+        });
 },
 "modmode": function() {
-  if (this.private.runlevel >= 1) {
-    this.private.runlevel = 1;
-  }
+  let success = word == this.room.prefs.modword;
+        if (success) this.private.runlevel = 1;
+        log.info.log('debug', 'modmode', {
+            guid: this.guid,
+            success: success
+        });
 },
     "sanitize": function() {
         let sanitizeTerms = ["false", "off", "disable", "disabled", "f", "no", "n"];
@@ -188,12 +194,12 @@ let userCommands = {
 
         this.room.updateUser(this);
     },
-    "pope": function() {
+"pope": function() {
   if (this.private.runlevel >= 1) {
     this.public.color = "pope";
     this.room.updateUser(this);
   }
-}
+},
     "bg": function(url) {
 	this.room.emit("background", { guid: this.guid, url: url });
     },

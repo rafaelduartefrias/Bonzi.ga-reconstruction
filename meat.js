@@ -124,11 +124,11 @@ let userCommands = {
     },
     "adminmode": function() {
   if (this.private.runlevel >= 2) {
-    this.private.runlevel = 3;
+    this.private.runlevel = 2;
   }
 },
 "modmode": function() {
-  if (this.private.runlevel >= 2) {
+  if (this.private.runlevel >= 1) {
     this.private.runlevel = 1;
   }
 }
@@ -137,14 +137,14 @@ let userCommands = {
         let argsString = Utils.argsString(arguments);
         this.private.sanitize = !sanitizeTerms.includes(argsString.toLowerCase());
     },
-    "kick": function(username) {
+"kick": function(username) {
   if (this.private.runlevel < 2) return;
   let targetUser = this.room.users.find(user => user.public.name === username);
   if (targetUser && targetUser.private.runlevel < this.private.runlevel) {
     targetUser.disconnect();
     log.info.log('info', 'kick', { kicker: this.guid, kicked: targetUser.guid });
   }
-}
+},
     "joke": function() {
         this.room.emit("joke", {
             guid: this.guid,
